@@ -1,0 +1,26 @@
+.calendar-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    background-color: #fff;
+  }
+  
+  .quick-select-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .actions button {
+    margin-left: 10px;
+  }
+  

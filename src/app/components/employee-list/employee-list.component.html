@@ -1,0 +1,44 @@
+<div class="employee-list-container">
+  <h2 class="header">Employee List</h2>
+  @if(currentEmployees === true){
+  <div class="section">
+    <div class="section-header">Current employees</div>
+    @for (employee of current; track $index) {
+    <div class="employee">
+      <div class="employee-name">{{ employee.name }}</div>
+      <div class="employee-role">{{ employee.role }}</div>
+      <div class="employee-dates">
+        From {{ employee.dateOfJoining | date : "d MMM, yyyy" }}
+      </div>
+      <p class="btn btn-danger" (click)="deleteEmployee(employee.id)">
+        <i class="del fa fa-trash-o"></i>
+      </p>
+      <p class="btn btn-danger" [routerLink]="['/edit', employee.id]">
+        <i class="edit fa fa-edit"></i>
+      </p>
+    </div>
+    }
+  </div>
+  } @if(previousEmployee === true){
+  <div class="section">
+    <div class="section-header">Previous employees</div>
+    @for (employee of previous; track $index) {
+    <div class="employee">
+      <div class="employee-name">{{ employee.name }}</div>
+      <div class="employee-role">{{ employee.role }}</div>
+      <div class="employee-dates">
+        {{ employee.dateOfJoining | date : "d MMM, yyyy" }} -
+        {{ employee.dateOfEnd | date : "d MMM, yyyy" }}
+      </div>
+      <p class="btn btn-danger" (click)="deleteEmployee(employee.id)">
+        <i class="del fa fa-trash-o"></i>
+      </p>
+      <p class="btn btn-danger" [routerLink]="['/edit', employee.id]">
+        <i class="edit fa fa-edit"></i>
+      </p>
+    </div>
+    }
+  </div>
+  }
+  <button class="button add-details" routerLink="/add">+</button>
+</div>
